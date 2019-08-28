@@ -1,4 +1,5 @@
 import Vue from 'vue'
+import 'babel-polyfill'//解决ES6不能兼容低版本浏览器问题
 
 import ElementUI from 'element-ui'
 import MyhttpServer from './plugins/http.js'
