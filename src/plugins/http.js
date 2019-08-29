@@ -7,7 +7,7 @@ MyhttpServer.install =  (Vue) => {
 
   axios.interceptors.request.use(function(config) {
     // 手动为 axios 的请求，追加 Authorization 请求头
-    config.headers.Authorization = window.sessionStorage.getItem('token')
+    config.headers.Authorization = window.localStorage.getItem('token')
     return config
   })
   axios.defaults.baseURL = 'http://127.0.0.1:8888/api/private/v1/'
