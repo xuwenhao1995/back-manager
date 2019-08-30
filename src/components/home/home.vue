@@ -2,7 +2,6 @@
   <el-container class="container">
     <el-header class="header">
       <div class="logo_tile">
-        <img src="../../assets/image/logo.jpg" alt height="70px" />
         <h2>电商后台管理系统</h2>
       </div>
       <el-button type="info" @click="logout">退出</el-button>
@@ -28,11 +27,11 @@
               <i class="el-icon-location"></i>
               <span>权限管理</span>
             </template>
-            <el-menu-item index="2-1">
+            <el-menu-item index="role">
               <i class="el-icon-menu"></i>
               <span>角色列表</span>
             </el-menu-item>
-            <el-menu-item index="2-1">
+            <el-menu-item index="right">
               <i class="el-icon-menu"></i>
               <span>权限列表</span>
             </el-menu-item>
@@ -127,7 +126,8 @@ export default {
       align-items: center;
       color: white;
       h2 {
-        font-weight: 200;
+        font-family: "微软雅黑";
+        font-weight: bold;
         margin-left: 15px;
       }
     }
@@ -136,6 +136,7 @@ export default {
     }
   }
   .aside {
+    margin-top: 20px;
     background-color: white;
   }
   .main {

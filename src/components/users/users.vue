@@ -1,10 +1,6 @@
 <template>
   <el-card class="box-card">
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item>首页</el-breadcrumb-item>
-      <el-breadcrumb-item>用户管理</el-breadcrumb-item>
-      <el-breadcrumb-item>用户列表</el-breadcrumb-item>
-    </el-breadcrumb>
+    <my-bread l1="用户管理" l2="用户列表"></my-bread>
 
     <!-- 搜索 -->
     <el-row class="search">

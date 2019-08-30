@@ -10,6 +10,10 @@ import router from './router'
 import App from './App.vue'
 import Moment from 'moment'
 
+//自定义组件
+import MyBread from './components/cuscom/myBread.vue'
+
+
 Vue.config.productionTip = false
 
 //全局过滤器，处理日期
@@ -20,6 +24,9 @@ Vue.filter('fmtdate',(v)=>{
 //使用vue插件
 Vue.use(ElementUI)
 Vue.use(MyhttpServer)
+
+//全局自定义组件
+Vue.component('my-bread',MyBread)
 
 new Vue({
   el: '#app',
