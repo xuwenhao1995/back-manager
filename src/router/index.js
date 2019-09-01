@@ -6,6 +6,10 @@ import Home from '../components/home/home.vue'
 import Users from '../components/users/users.vue'
 import Right from '../components/rights/right.vue'
 import Role from '../components/rights/role.vue'
+import GoodsList from '../components/goods/goodslist.vue'
+import GoodsAdd from '../components/goods/goodsadd.vue'
+
+import {Message} from 'element-ui'
 
 //Element也出现该问题是因为Element也使用了vue-router
 const originalPush = Router.prototype.push
@@ -26,12 +30,28 @@ const router = new Router({
     path: '/', 
     component: Home,
     children:[
-      {name:'users',path:'users',component:Users},
-      {name:'right',path:'right',component:Right},
-      {name:'role',path:'role',component:Role},
+      {name:'users',path:'/users',component:Users},
+      {name:'rights',path:'/rights',component:Right},
+      {name:'roles',path:'/roles',component:Role},
+      {name:'goods',path:'/goods',component:GoodsList},
+      {name:'goodsadd',path:'/goodsadd',component:GoodsAdd},
     ]
   }
   ]
+})
+//路由导航守卫
+router.beforeEach((to, from, next) =>{
+  if(to.path === '/login'){
+    next()
+  }else{
+    const token = localStorage.getItem('token')
+    if(!token){
+      Message.warning('你未登陆！');
+      router.push({name:'login'})
+      return
+    }
+    next()
+  }
 })
 
 export default router
