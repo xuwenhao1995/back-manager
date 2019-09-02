@@ -12,6 +12,9 @@ import Moment from 'moment'
 
 //自定义组件
 import MyBread from './components/cuscom/myBread.vue'
+// 导入 树形表格组件
+import TreeGrid from 'vue-table-with-tree-grid'
+
 
 
 Vue.config.productionTip = false
@@ -27,6 +30,8 @@ Vue.use(MyhttpServer)
 
 //全局自定义组件
 Vue.component('my-bread',MyBread)
+// 把 导入的树形表格，注册为 全局组件
+Vue.component('tree-table', TreeGrid)
 
 new Vue({
   el: '#app',
